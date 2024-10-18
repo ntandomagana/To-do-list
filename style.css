@@ -33,10 +33,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: red
-    border-radius: 30px
-    padding-left: 20px
-    margin-bottom: 25px
+    background: rgb(110, 197, 234);
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
 }
 
 input {
@@ -48,7 +48,7 @@ input {
     font-weight: 14px;
 }
 
-button {
+#addBtn{
     border: none;
     outline: none;
     padding: 16px 50px;
@@ -57,5 +57,9 @@ button {
     font-size: 16px;
     cursor: pointer;
     border-radius: 40px;
+
+}
+Button {
+color: purple;
 
 }

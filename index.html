@@ -4,20 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="text/javascript" href="./main.js">
 </head>
 <body>
 
     <div class="container">
         <div class="to-do-app">
             <h2>To-Do List</h2>
+            <button id="clear" onclick="clearAll()">Clear All</button>
             <div class="row">
                 <input type="text" id="input-box" placeholder="Enter Your task here">
-                <button>Add</button>
+                <button onclick="addTask()" id="addBtn">Add</button>
 
             </div>
+            <ul id="myTodolist">
+
+            </ul>
 
         </div>
     </div>
-    
+
+
+    <script src="main.js"></script>
 </body>
 </html>
