@@ -1,24 +1,10 @@
 const arr = JSON.parse(localStorage.getItem("todolist")) || [];
 
-    // var input = document.getElementById("myTodolist");
-    // var divTag = document.createElement("div");
-    // var singleTask = document.createElement("li");
-    // var deleteButton = document.createElement("button");
-    // var editbutton = document.createElement("button");
-    // var divButton = document.createElement("div")
-
-    // deleteButton.className = "delete";
-    // editbutton.className = "edit";
-    // divButton.className = "buttons";
-    // divTag.className = "taskList";
-
-
-
-    // deleteButton.innerHTML = "Delete";
-    // editbutton.innerHTML = "Edit";
 
 function addTask() {
     var task = document.getElementById("input-box");
+    var index = arr.lenght - 1;
+
     
     var taskValue = task.value;
     if (taskValue === "") {
@@ -70,6 +56,9 @@ function addTask() {
 
     editbutton.onclick = function () {
         editTask(index, singleTask);
+    };
+    singleTask.onclick = function () {
+        taskDone(index,singleTask);
     };
 
     addToStorage();
@@ -127,6 +116,10 @@ function displayExistingTasks() {
         editbutton.onclick = function () {
             editTask(index, singleTask);
         };
+
+        singleTask.onclick = function () {
+            taskDone(index,singleTask);
+        };
     });
 }
 
@@ -153,6 +146,14 @@ function clearAll(){
     prompt("Are you sure you want to clear all tasks?");
     localStorage.removeItem("todolist");
     location.reload();
+}
+
+function taskDone(index, taskElement) {
+
+    taskElement.style.textDecoration = "line-through";
+    taskElement.style.color = "gray";
+    
+
 }
 
 
