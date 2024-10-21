@@ -1,4 +1,5 @@
 const arr = JSON.parse(localStorage.getItem("todolist")) || [];
+// const todoList = [];
 
 
 function addTask() {
@@ -155,10 +156,9 @@ function taskDone(index, taskElement) {
     
 
 }
-
-
-
-
 function addToStorage(){
     localStorage.setItem("todolist", JSON.stringify(arr));
 }
+
+
+export { todoList }
