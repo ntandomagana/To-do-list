@@ -1,20 +1,29 @@
+import {saveTask} from './frontback.js';
+
 const arr = JSON.parse(localStorage.getItem("todolist")) || [];
 // const todoList = [];
 
-
 function addTask() {
     var task = document.getElementById("input-box");
-    var index = arr.lenght - 1;
-
+    var index = arr.length - 1;
     
     var taskValue = task.value;
     if (taskValue === "") {
         alert("Please enter a task");
         return;
     }
+    
+    let taskObj = {
+        id: index ,
+        task: taskValue,
+        isDone: false,
+    }
+    
+    saveTask(taskObj);
 
     // Add the task to the array
     arr.push(taskValue);
+
 
     var input = document.getElementById("myTodolist");
     var divTag = document.createElement("div");
@@ -107,7 +116,7 @@ function displayExistingTasks() {
         deleteButton.onclick = function () {
 
             // Ask user for confirmation before deleting the task
-            var deletequestion = prompt(`Are you sure you want to delete ${singleTask.innerHTML}? Type yes or no.`);
+            var deletequestion = confirm(`Are you sure you want to delete ${singleTask.innerHTML}`);
             if (deletequestion === "no") {
                 return;
             }
@@ -144,7 +153,7 @@ displayExistingTasks();
 
 
 function clearAll(){
-    prompt("Are you sure you want to clear all tasks?");
+    confirm("Are you sure you want to clear all tasks?");
     localStorage.removeItem("todolist");
     location.reload();
 }
@@ -160,5 +169,5 @@ function addToStorage(){
     localStorage.setItem("todolist", JSON.stringify(arr));
 }
 
-
-export { todoList }
+window.addTask = addTask;
+// export { todoList }

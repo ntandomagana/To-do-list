@@ -1,7 +1,7 @@
 const arr = [];
 
 function addTask(task) {
-    var index = arr.lenght - 1;
+    var index = arr.length - 1;
     var taskValue = task.value;
     if (taskValue === "") {
         alert("Please enter a task");
@@ -36,7 +36,7 @@ function taskDone(index, taskElement) {
 
 
 
-export {arr, addTask, deleteTask, editTask, taskDone};
+export {arr, deleteTask, editTask, taskDone};
 
 
 
