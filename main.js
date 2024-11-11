@@ -1,4 +1,4 @@
-const arr = JSON.parse(localStorage.getItem("todolist")) || [];
+
 // const todoList = [];
 
 
@@ -161,4 +161,4 @@ function addToStorage(){
 }
 
 
-export { todoList }
+// export { todoList }
